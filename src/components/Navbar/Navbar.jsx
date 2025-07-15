@@ -106,36 +106,36 @@ const Navbar = () => {
 
       {/* Mobile Menu Items */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
+        <div className="absolute top-full left-0 w-full bg-[#050414] bg-opacity-90 backdrop-blur-lg z-50 rounded-b-lg shadow-lg md:hidden transition-all">
+          <ul className="flex flex-col items-center space-y-6 py-6 text-gray-300">
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className={`cursor-pointer hover:text-white ${
+                className={`w-full text-center py-3 cursor-pointer hover:text-white text-lg font-semibold transition-colors duration-200 ${
                   activeSection === item.id ? "text-[#8245ec]" : ""
                 }`}
               >
-                <button onClick={() => handleMenuItemClick(item.id)}>
+                <button className="w-full" onClick={() => handleMenuItemClick(item.id)}>
                   {item.label}
                 </button>
               </li>
             ))}
-            <div className="flex space-x-4">
+            <div className="flex space-x-6 mt-4">
               <a
                 href="https://github.com/shivamgaur1844"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white text-2xl"
               >
-                <FaGithub size={24} />
+                <FaGithub />
               </a>
               <a
                 href="https://www.linkedin.com/in/tarun-kaushik-553b441a4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white text-2xl"
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin />
               </a>
             </div>
           </ul>
